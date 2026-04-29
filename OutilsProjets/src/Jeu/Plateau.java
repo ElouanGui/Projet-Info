@@ -15,7 +15,7 @@ public class Plateau {
     private int nbTypesTuiles;
     
     
-    public Plateau(int nbCol, int nbLig, int nbTypesTuiles){
+    public Plateau(int nbCol, int nbLig, int nbTypes){
         this.nbCol=nbCol;
         this.nbLig=nbLig;
         this.nbTypesTuiles=nbTypesTuiles;

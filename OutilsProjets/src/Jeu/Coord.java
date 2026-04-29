@@ -12,4 +12,9 @@ public class Coord {
     
     private int abscisse;
     private int ordonnee;
+    
+    public Coord(int abs, int ord){
+        this.abscisse = abs;
+        this.ordonnee = ord;
+    }
 }
