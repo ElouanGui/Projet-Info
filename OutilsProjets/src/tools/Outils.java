@@ -26,7 +26,7 @@ public class Outils {
     public static final String WHITE =  "\u001B[37m";
         
     public static void afficheAvecCouleur(String txt, String color){          
-            System.out.print(color+txt+RESET);
+            System.out.println(color+txt+RESET);
     }
     
 // carre 25A0 , losange : 25C6 , rond : 25CF , étoile : 2605 , triangle : 25B2

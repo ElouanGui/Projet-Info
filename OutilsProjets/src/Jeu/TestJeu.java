@@ -18,8 +18,15 @@ public class TestJeu {
      */
     public static void main(String[] args) {
         Tuile t = new Tuile(6);
-        System.out.println(t.getType());
-        System.out.println(t);
+//        System.out.println(t.getType());
+//        System.out.println(t);
+        
+        Colonne col = new Colonne(10, 6);
+        System.out.println(col);
+        
+        Plateau plateau = new Plateau(5,5,6);
+        
+        
     }
     
 }
