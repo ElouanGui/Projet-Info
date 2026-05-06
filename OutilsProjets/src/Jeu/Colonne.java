@@ -46,6 +46,10 @@ public class Colonne {
         return res;
 
     }
+    
+    public Tuile getTuile(int lig){
+        return this.lesTuiles.get(lig);
+    }
 
     @Override
     public String toString() {
