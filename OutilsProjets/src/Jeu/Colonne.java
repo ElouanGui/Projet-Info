@@ -47,4 +47,10 @@ public class Colonne {
 
     }
 
+    public Tuile getTuile(int lig) {
+        return this.lesTuiles.get(lig);
+    }
+    
+    
+
 }

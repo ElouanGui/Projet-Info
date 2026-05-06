@@ -25,13 +25,17 @@ public class Plateau {
         }
     }
     
+    //public Tuile getTuile(Coord coord){
+    //    return this.lesColonnes[coord.getCol()].get(coord.getLig());
+    //}
+    
     public String toString(){
         String str="";
         for(int lig=this.nbLig-1;lig>=0;lig--){
             for(int col=0; col<this.nbCol;col++){
-                str+=this.getTuiles(col, lig);
+                str+=this.lesColonnes[col].getTuile(lig);
             }
-        str+="\n";
+            str+="\n";
         }
         return str;
     }
@@ -43,7 +47,7 @@ public class Plateau {
         while (col<this.nbCol && !trouve){
             int lig=0;
             while (lig<this.nbLig-2 && !trouve){
-                if (this.existeMatch(new Coord(col,lig))){
+                if (this.lesColonnes[col].existeMatch(new Coord(col,lig))){
                     trouve=true;
                     pos=new Coord(col,lig);
                 }else{
