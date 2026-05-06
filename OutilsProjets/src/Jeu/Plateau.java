@@ -12,15 +12,15 @@ public class Plateau {
     private Colonne[] lesColonnes;
     private int nbCol;
     private int nbLig;
-    private int nbTypesTuiles;
+    private int nbTypes;
     
     
     public Plateau(int nbCol, int nbLig, int nbTypes){
         this.nbCol=nbCol;
         this.nbLig=nbLig;
-        this.nbTypesTuiles=nbTypesTuiles;
+        this.nbTypes=nbTypes;
         this.lesColonnes=new Colonne [nbCol];
-        for (int i =0; i<this.nbCol;i++){
+        for (int i=0; i<this.nbCol; i++){
             this.lesColonnes[i]=new Colonne(nbLig,nbTypes);
         }
     }
