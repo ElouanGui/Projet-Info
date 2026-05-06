@@ -24,7 +24,7 @@ public class TestJeu {
         Colonne col = new Colonne(10, 6);
         System.out.println(col);
         
-        Plateau plateau = new Plateau(5,5,6);
+        Plateau plateau = new Plateau(10,14,6);
         System.out.print(plateau);
         
     }

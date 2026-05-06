@@ -4,6 +4,8 @@
  */
 package Jeu;
 
+import tools.Outils;
+
 /**
  *
  * @author eguiller
@@ -32,10 +34,27 @@ public class Plateau {
     public String toString(){
         String str="";
         for(int lig=this.nbLig-1;lig>=0;lig--){
+            if (lig>9){
+                str += Outils.BLACK + lig + " | ";
+            }else{
+                str += Outils.BLACK + " " + lig + " | ";
+            }
             for(int col=0; col<this.nbCol;col++){
-                str+=this.lesColonnes[col].getTuile(lig);
+                str+=this.lesColonnes[col].getTuile(lig) + "  ";
             }
             str+="\n";
+        }
+        str += "    ";
+        for(int col=0;col<3*this.nbCol;col++){
+            str += "-";            
+        }
+        str+="\n";
+        str+="    ";
+        if (this.nbCol>9){
+                str += " ";
+            }
+        for (int col = 0;col<this.nbCol;col++){
+            str += Outils.BLACK + col + "  ";
         }
         return str;
     }
