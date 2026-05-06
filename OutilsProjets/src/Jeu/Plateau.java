@@ -27,7 +27,7 @@ public class Plateau {
     
     public String toString(){
         String str="";
-        for(int col=0; col<this.nbCol;col++){
+        for(int lig=this.nbLig-1;lig>=0;lig--){
             for(int col=0; col<this.nbCol;col++){
                 str+=this.getTuiles(col, lig);
             }
