@@ -45,7 +45,7 @@ public class Tuile {
         couleurs.add(Outils.BLUE);
         couleurs.add(Outils.PURPLE);
         couleurs.add(Outils.CYAN);
-        Outils.afficheAvecCouleur(symboles.get(this.type),couleurs.get(this.type));
-        return "";
+        //Outils.afficheAvecCouleur(symboles.get(this.type),couleurs.get(this.type));
+        return couleurs.get(this.type) + symboles.get(this.type);
     }
 }
