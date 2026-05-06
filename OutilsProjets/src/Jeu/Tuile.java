@@ -6,6 +6,7 @@ package Jeu;
 
 import java.util.ArrayList;
 import tools.Outils;
+import java.util.Random;
 
 /**
  *
@@ -18,22 +19,33 @@ public class Tuile {
     //private Coord position;
     
     public Tuile(int nbTypes){
-        this.type = Outils.generateur.nextInt(nbTypes);
+        //this.type = Outils.generateur.nextInt(3);
+        Random random = new Random();
+        this.type = random.nextInt(nbTypes);
     }
 
     public int getType() {
         return type;
     }
     
-    
-    
-    
-    public String ToString(){
+    public String toString(){
         ArrayList<String> symboles;
         symboles = new ArrayList<String>();
         symboles.add(Outils.CARRE);
         symboles.add(Outils.LOSANGE);
         symboles.add(Outils.ROND);
-        return symboles.get(type);
+        symboles.add(Outils.ETOILE);
+        symboles.add(Outils.TRIANGLE);
+        symboles.add(Outils.COEUR);
+        ArrayList<String> couleurs;
+        couleurs = new ArrayList<String>();
+        couleurs.add(Outils.RED);
+        couleurs.add(Outils.GREEN);
+        couleurs.add(Outils.YELLOW);
+        couleurs.add(Outils.BLUE);
+        couleurs.add(Outils.PURPLE);
+        couleurs.add(Outils.CYAN);
+        Outils.afficheAvecCouleur(symboles.get(type),couleurs.get(type));
+        return "";
     }
 }

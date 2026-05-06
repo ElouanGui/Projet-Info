@@ -33,7 +33,7 @@ public class TestOutils {
         System.out.println(Outils.BLUE+"bleu ");
         System.out.println(Outils.GREEN+"vert");
         System.out.println(Outils.RED+"rouge ");
-        System.out.println(Outils.CYAN+"cyan");
+        System.out.println(Outils.CYAN+Outils.CARRE);
         System.out.println(Outils.RESET+"...");
         
         System.out.println("Affichage de caractère forme :");

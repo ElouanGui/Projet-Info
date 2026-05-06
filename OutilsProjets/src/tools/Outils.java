@@ -11,7 +11,7 @@ import java.util.Random;
  * @author cvarnier
  */
 public class Outils {
-    final static public long GRAINE = 1;
+    final static public long GRAINE = 67;
     final static public Random generateur = new Random(GRAINE);
     
     

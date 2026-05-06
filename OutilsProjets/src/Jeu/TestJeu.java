@@ -4,17 +4,20 @@
  */
 package Jeu;
 
+import java.util.ArrayList;
+import tools.Outils;
+
 /**
  *
  * @author eguiller
  */
-public class TestJeu {
+public class TestJeu { 
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Tuile t = new Tuile(3);
+        Tuile t = new Tuile(6);
         System.out.println(t.getType());
         System.out.println(t);
     }
