@@ -17,4 +17,16 @@ public class Coord {
         this.abscisse = abs;
         this.ordonnee = ord;
     }
+
+    public int getCol() {
+        return abscisse;
+    }
+
+    public int getLig() {
+        return ordonnee;
+    }
+    
+    
+    
+    
 }

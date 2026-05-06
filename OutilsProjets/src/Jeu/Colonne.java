@@ -14,15 +14,30 @@ public class Colonne {
     
     private ArrayList<Tuile> lesTuiles;
     
-    public boolean existeMatch(Coord (col, lig)){
+    public boolean existeMatch(Coord coord){
         boolean res= false;
-        if (this.lesColonnes[col].get(lig-1).type
-                ==this.lesColonnes[col].get(lig).type
-                && this.lesColonnes[col].get(lig-1).type
-                ==this.lesColonnes[col].get(lig+1).type ){
+        int lig=coord.getLig();
+        if (this.lesTuiles.get(lig-1).getType()
+                ==this.lesTuiles.get(lig).getType()
+                && this.lesTuiles.get(lig-1).getType()
+                ==this.lesTuiles.get(lig+1).getType()){
             res=true;
         }
-        if ()                                                   // si le point renseigné a pour ordonnée la 1ere ou dernière valeur de la liste 
+        if (lig==this.lesTuiles.size()-1 && this.lesTuiles.get(lig).getType()
+                ==this.lesTuiles.get(lig-1).getType()                  // si le point renseigné a pour ordonnée la dernière valeur de la liste 
+                && this.lesTuiles.get(lig).getType()
+                ==this.lesTuiles.get(lig-2).getType()) {   
+            res=true;
+        }   
+        if (lig==0 && this.lesTuiles.get(lig).getType()
+                ==this.lesTuiles.get(lig+1).getType()                  // si le point renseigné a pour ordonnée la 1ere valeur de la liste 
+                && this.lesTuiles.get(lig).getType()
+                ==this.lesTuiles.get(lig+2).getType()) {   
+            res=true;
+        }  
+        
+        return res;
+        
             }
     
 }
