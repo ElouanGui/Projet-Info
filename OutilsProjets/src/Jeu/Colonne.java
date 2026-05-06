@@ -16,7 +16,7 @@ public class Colonne {
     
     public Colonne(int nbLig, int nbTypes){
         lesTuiles = new ArrayList<Tuile>();
-        for (int i=0; i<nbTypes; i++){
+        for (int i=0; i<nbLig; i++){
             lesTuiles.add(new Tuile(nbTypes));
         }
     }
@@ -46,5 +46,16 @@ public class Colonne {
         return res;
 
     }
+
+    @Override
+    public String toString() {
+        String res = "Colonne{" + "lesTuiles=";
+        for (int i=0; i<this.lesTuiles.size(); i++){
+            res += this.lesTuiles.get(i);
+        }
+        return res;
+    }
+    
+    
 
 }

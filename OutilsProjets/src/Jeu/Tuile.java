@@ -25,7 +25,7 @@ public class Tuile {
     }
 
     public int getType() {
-        return type;
+        return this.type;
     }
     
     public String toString(){
@@ -45,7 +45,7 @@ public class Tuile {
         couleurs.add(Outils.BLUE);
         couleurs.add(Outils.PURPLE);
         couleurs.add(Outils.CYAN);
-        Outils.afficheAvecCouleur(symboles.get(type),couleurs.get(type));
+        Outils.afficheAvecCouleur(symboles.get(this.type),couleurs.get(this.type));
         return "";
     }
 }
