@@ -5,6 +5,7 @@
 package Jeu;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -13,52 +14,42 @@ import java.util.ArrayList;
 public class Colonne {
 
     private ArrayList<Tuile> lesTuiles;
-    
-    public Colonne(int nbLig, int nbTypes){
+
+    public Colonne(Random generateur, int nbLig, int nbTypes) {
         lesTuiles = new ArrayList<Tuile>();
-        for (int i=0; i<nbLig; i++){
-            lesTuiles.add(new Tuile(nbTypes));
+        for (int i = 0; i < nbLig; i++) {
+            lesTuiles.add(new Tuile(generateur, nbTypes));
         }
     }
 
     public boolean existeMatch(Coord coord) {
         boolean res = false;
         int lig = coord.getLig();
-        if (this.lesTuiles.get(lig - 1).getType()
-                == this.lesTuiles.get(lig).getType()
-                && this.lesTuiles.get(lig - 1).getType()
-                == this.lesTuiles.get(lig + 1).getType()) {
-            res = true;
+        if (lig > this.lesTuiles.size() - 3) {
+            res = false;
+        } else {
+            res = this.lesTuiles.get(lig).getType() == this.lesTuiles.get(lig + 1).getType()
+                    && this.lesTuiles.get(lig).getType() == this.lesTuiles.get(lig + 2).getType();
         }
-        if (lig == this.lesTuiles.size() - 1 && this.lesTuiles.get(lig).getType()
-                == this.lesTuiles.get(lig - 1).getType() // si le point renseigné a pour ordonnée la dernière valeur de la liste 
-                && this.lesTuiles.get(lig).getType()
-                == this.lesTuiles.get(lig - 2).getType()) {
-            res = true;
-        }
-        if (lig == 0 && this.lesTuiles.get(lig).getType()
-                == this.lesTuiles.get(lig + 1).getType() // si le point renseigné a pour ordonnée la 1ere valeur de la liste 
-                && this.lesTuiles.get(lig).getType()
-                == this.lesTuiles.get(lig + 2).getType()) {
-            res = true;
-        }
-
         return res;
-
     }
-    
-    public Tuile getTuile(int lig){
+
+    public Tuile getTuile(int lig) {
         return this.lesTuiles.get(lig);
     }
 
     @Override
     public String toString() {
         String res = "Colonne{" + "lesTuiles=";
-        for (int i=0; i<this.lesTuiles.size(); i++){
+        for (int i = 0; i < this.lesTuiles.size(); i++) {
             res += this.lesTuiles.get(i);
         }
         return res;
     }
-    
 
+    
+      public void supprimeTuile(Coord coord) {
+        this.lesTuiles.remove(coord.getLig());
+}
+      
 }

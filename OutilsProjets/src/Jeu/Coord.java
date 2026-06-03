@@ -25,6 +25,11 @@ public class Coord {
     public int getLig() {
         return ordonnee;
     }
+
+    @Override
+    public String toString() {
+        return "Coord{" + "abscisse=" + abscisse + ", ordonnee=" + ordonnee + '}';
+    }
     
     
     

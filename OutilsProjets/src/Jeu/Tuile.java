@@ -5,8 +5,9 @@
 package Jeu;
 
 import java.util.ArrayList;
-import tools.Outils;
 import java.util.Random;
+import tools.Outils;
+import static tools.Outils.GRAINE;
 
 /**
  *
@@ -18,10 +19,9 @@ public class Tuile {
     
     //private Coord position;
     
-    public Tuile(int nbTypes){
+    public Tuile(Random generateur, int nbTypes){
         //this.type = Outils.generateur.nextInt(3);
-        Random random = new Random();
-        this.type = random.nextInt(nbTypes);
+        this.type = generateur.nextInt(nbTypes);
     }
 
     public int getType() {

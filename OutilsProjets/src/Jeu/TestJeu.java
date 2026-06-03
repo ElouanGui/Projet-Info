@@ -5,28 +5,38 @@
 package Jeu;
 
 import java.util.ArrayList;
+import java.util.Random;
+import tools.Clavier;
 import tools.Outils;
+import static tools.Outils.GRAINE;
 
 /**
  *
  * @author eguiller
  */
-public class TestJeu { 
+public class TestJeu {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Tuile t = new Tuile(6);
+        System.out.print("graine ?");
+        int graine = Clavier.getInt();
+        Random generateur = new Random(graine);
+
+        Tuile t = new Tuile(generateur, 4);
 //        System.out.println(t.getType());
 //        System.out.println(t);
-        
-        Colonne col = new Colonne(10, 6);
+
+        Colonne col = new Colonne(generateur, 10, 4);
         System.out.println(col);
-        
-        Plateau plateau = new Plateau(10,14,6);
+
+        Plateau plateau = new Plateau(generateur, 10, 10, 4);
         System.out.print(plateau);
-        
+
+        while()
+        System.out.println(plateau.posMatchVertical());
+
     }
-    
+
 }
