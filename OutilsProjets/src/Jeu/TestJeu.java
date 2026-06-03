@@ -34,7 +34,7 @@ public class TestJeu {
         Plateau plateau = new Plateau(generateur, 10, 10, 4);
         System.out.print(plateau);
 
-        while()
+        //while()
         System.out.println(plateau.posMatchVertical());
 
     }
